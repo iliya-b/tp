@@ -33,6 +33,17 @@ void rz_free_cpu(rz_cpu_p pcpu);
  */
 const char *rz_cpu_info(const rz_cpu_p pcpu);
 
+
+
+/**
+ * @brief Get standard output string
+ * 
+ * @param pcpu pointer to CPU instance
+ * @return const char* last standard out
+ */
+const char *rz_stdout(const rz_cpu_p pcpu);
+
+
 /**
  * @brief Execute one CPU instruction
  * 

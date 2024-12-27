@@ -9,13 +9,26 @@ set(CMAKE_DEBUG_POSTFIX d)
 if(CMAKE_BUILD_TYPE MATCHES Debug)
     message("debug mode")
     add_compile_definitions(DEBUG)
+    set(SRC_LIST main.c cpu.c memory.c ecall.c)
+    add_executable(risc-z ${SRC_LIST})
 endif(CMAKE_BUILD_TYPE MATCHES Debug)
 
 if(CMAKE_BUILD_TYPE MATCHES Release)
     message("release mode")
     add_compile_definitions(NDEBUG)
+    set(SRC_LIST main.c cpu.c memory.c ecall.c)
+    add_executable(risc-z ${SRC_LIST})
 endif(CMAKE_BUILD_TYPE MATCHES Release)
 
-set(SRC_LIST main.c cpu.c memory.c ecall.c)
 
-add_executable(risc-z ${SRC_LIST})
+
+if(CMAKE_BUILD_TYPE MATCHES TEST)
+    message("debug mode")
+    add_compile_definitions(DEBUG)
+    set(SRC_LIST test_main.c cpu.c memory.c ecall.c)
+    add_executable(risc-z ${SRC_LIST})
+
+endif(CMAKE_BUILD_TYPE MATCHES TEST)
+
+
+

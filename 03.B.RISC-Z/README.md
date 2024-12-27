@@ -1,1 +1,1 @@
-Запуск тестов: ./run_tests.sh
+Запуск тестов: ./build.sh && ./run_tests.sh
